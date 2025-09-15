@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赞助我</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: none;
+        }
+        .image-container img {
+            width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>赞助我</h1>
+		<a href="/">回到首页</a>
+		<p>如不想赞助,只需要帮我们注册一个账号即可</p>
+		<a href="https://www.rainyun.com/NjY2OTYy_" target="_blank" rel="noopener">点击注册即可（不想给钱点这里）</a>
+        <button class="button" onclick="showImages()">赞助我们</button>
+
+        <div class="image-container" id="image-container">
+            <img src="image1.jpg" alt="1">
+            <img src="image2.jpg" alt="2">
+        </div>
+    </div>
+
+    <script>
+        function showImages() {
+            var imageContainer = document.getElementById('image-container');
+            imageContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
