@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏搜索 - Yun-Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        input[type="text"] { width: 300px; padding: 8px; }
+        ul { list-style: none; padding: 0; }
+        li { margin: 8px 0; }
+        a { text-decoration: none; color: #0078d4; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>游戏搜索</h1>
+    <input type="text" id="search" placeholder="输入游戏ID或关键词..." autofocus>
+    <ul id="result"></ul>
+
+    <script>
+        const 游戏 = [
+            { id: "", name: "", url: "" }
+        ];
+
+        const searchInput = document.getElementById('search');
+        const resultList = document.getElementById('result');
+
+        function search() {
+            const keyword = searchInput.value.trim().toLowerCase();
+            resultList.innerHTML = '';
+            if (!keyword) return;
+            const results = 游戏.filter(item =>
+                item.id.toLowerCase().includes(keyword) ||
+                item.name.toLowerCase().includes(keyword)
+            );
+            if (results.length === 0) {
+                resultList.innerHTML = '<li>未找到相关游戏</li>';
+            } else {
+                results.forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${item.url}">${item.id}. ${item.name}</a>`;
+                    resultList.appendChild(li);
+                });
+            }
+        }
+
+        searchInput.addEventListener('input', search);
+    </script>
+</body>
+</html>
